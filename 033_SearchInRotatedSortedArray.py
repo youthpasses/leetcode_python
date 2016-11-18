@@ -20,14 +20,14 @@ Subscribe to see which companies asked this question
 
 class Solution(object):
     def search(self, nums, target):
-        l = 0; r = len(nums)-1
+        l = 0; r = len(nums) - 1
         while l < r:
-            m = (l+r)/2
+            m = (l + r) / 2
             if nums[l] <= target and target <= nums[m]: r = m
-            elif nums[m+1] <= target and target <= nums[r]: l = m+1
+            elif nums[m + 1] <= target and target <= nums[r]: l = m + 1
             elif nums[l] > nums[m]: r = m
-            else: l = m+1
+            else: l = m + 1
         if nums[l] == target: return l        
         return -1
 
-print Solution().search([5,6,7,8,9,10,1,2,3,4], 1)
+print Solution().search([5,5,6,7,7,8,9,10,1,1,2,2,3,4], 1)
